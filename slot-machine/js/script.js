@@ -32,9 +32,7 @@ const spinBtnEl = document.getElementById("spin");
 
 let numFruits = hallOfFruits.length
 spinBtnEl.style.opacity = "0.4"
-// let fruit1Name = fruit1BtmEl.innerHTML
-// let fruit2Name = fruit2BtmEl.innerHTML
-// let fruit3Name = fruit3BtmEl.innerHTML
+
 
 let fruit1Key = Object.keys(fruits)[0]
 let fruit2Key = Object.keys(fruits)[1]
@@ -53,9 +51,7 @@ newGameBtnEl.addEventListener("click", newGame)
 
 // Functions 
 
-spinBtnEl.disabled = true;
 function render() {
-    spinBtnEl.style.opacity = "1"
     topTextEl.innerHTML = "Welcome! ʕ•́ᴥ•̀ʔっ"
     topTextEl.style.color = "white"
     fruitSlot1()
@@ -107,6 +103,7 @@ function fruitSlot2() {
     } else {
         fruit2BtmEl.innerHTML =  fruit2Key
     }
+    
 }
 
 function fruitSlot3() {
@@ -126,6 +123,7 @@ function fruitSlot3() {
     } else {
         fruit3BtmEl.innerHTML =  fruit3Key
     }
+    
 }
 
 function matchCondition1() {
@@ -152,9 +150,11 @@ function matchCondition1() {
             topTextEl.style.color = "red"
         }
     } else {
-        totalCoins -= 1
+        totalCoins -= 3
         totalCoinsEl.innerHTML = totalCoins
     }
+    spinBtnEl.removeEventListener("click", render)
+    spinBtnEl.style.visibility = "hidden"
 }
 
 
@@ -166,10 +166,14 @@ function winCondition() {
        topTextEl.innerHTML = "CONGRATULATIONS!! YOU WON"
        topTextEl.style.color = "yellowgreen"
        spinBtnEl.removeEventListener("click", render)
-    } 
+       stop() 
+        
+    } else {
+        spinBtnEl.addEventListener("click", render)
     lossCondition()
+    spinBtnEl.style.visibility = "hidden"
 }
-
+}
 function lossCondition() {
     if (totalCoins <= 0) {
         totalCoinsEl.innerHTML = totalCoins
@@ -178,7 +182,12 @@ function lossCondition() {
         topTextEl.style.color = "red"
         spinBtnEl.removeEventListener("click", render)
         spinBtnEl.style.opacity = "0.4"
+        stop() 
+    } else {
+        spinBtnEl.style.visibility = "visible"
+        spinBtnEl.addEventListener("click", render)
     }
+    spinBtnEl.style.visibility = "hidden"
 }
 
 function newGame() {
@@ -195,4 +204,44 @@ function newGame() {
     fruit1BtmEl.innerHTML = "spin"
     fruit2BtmEl.innerHTML = "to"
     fruit3BtmEl.innerHTML = "win!"
+    startTimer()
 }
+
+
+function stop() {
+    clearInterval(start)
+    document.querySelector(".lever").style.visibility = "hidden"
+}
+
+function startTimer() {
+    start = setInterval(function() {
+        spinBtnEl.style.visibility = "visible"
+        document.querySelector(".lever").style.visibility = "visible"
+        spinBtnEl.addEventListener("click", render)
+        }, 800)
+        
+}
+
+// function startTimer() {
+//     start = setInterval(function() {
+//         spinBtnEl.style.visibility = "visible"
+//         spinBtnEl.addEventListener("click", render)
+//         }, 1000)
+// }
+
+
+// setInterval(function() {
+//     spinBtnEl.style.visibility = "visible"
+//     spinBtnEl.addEventListener("click", render)
+//     }, 1000)
+
+// var timer = setInterval(function() {
+//     if (totalCoins >= 40 || totalCoins <= 0) {
+//         clearInterval(timer)
+//         }
+// }, 1000)   
+
+    // var stopSetInt = setInterval(function() {
+    // spinBtnEl.style.visibility = "visible"
+    // spinBtnEl.addEventListener("click", render)
+    // }, 1000)
