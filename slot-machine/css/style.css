@@ -76,11 +76,13 @@ body {
     grid-column: 2 / span 2;
     grid-row: 1 / span 1;
     padding-top: 10px;
+    color: white;
 }
 .cell1-bottom {
     grid-column: 2 / span 2;
     grid-row: 3 / span 1;
     padding-bottom: 20px;
+    color: white;
 }
 #cell1-fruit {
     grid-column: 1 / span 4;
@@ -88,7 +90,8 @@ body {
     background-image: url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000");
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 20px 20px;
+    margin: 5px 20px;
+    padding-bottom: 10px;
     background-position: center;
     border-radius: 200px;
     animation: updown 2s infinite;
@@ -110,11 +113,13 @@ body {
     grid-column: 2 / span 2;
     grid-row: 1 / span 1;
     padding-top: 10px;
+    color: white;
 }
 .cell2-bottom {
     grid-column: 2 / span 2;
     grid-row: 3 / span 1;
     padding-bottom: 20px;
+    color: white;
 }
 #cell2-fruit {
     grid-column: 1 / span 4;
@@ -122,7 +127,8 @@ body {
     background-image: url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 20px 20px;
+    margin: 5px 20px;
+    padding-bottom: 10px;
     background-position: center;
     border-radius: 200px;
     animation: updown 2.5s infinite;
@@ -143,11 +149,13 @@ body {
     grid-column: 2 / span 2;
     grid-row: 1 / span 1;
     padding-top: 10px;
+    color: white;
 }
 .cell3-bottom {
     grid-column: 2 / span 2;
     grid-row: 3 / span 1;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    color: white;
 }
 #cell3-fruit {
     grid-column: 1 / span 4;
@@ -155,7 +163,8 @@ body {
     background-image: url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000");
     background-size: cover;
     background-repeat: no-repeat;
-    margin: 20px 20px;
+    margin: 5px 20px;
+    padding-bottom: 10px;
     background-position: center;
     border-radius: 200px;
     animation: updown 3.5s infinite;
@@ -172,34 +181,43 @@ body {
     grid-column: 2 / span 3 ;
     grid-row: 1 / span 1;
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 20px;;
+    padding-top: 20px;
+    padding-bottom: 15px;;
     color: white;
     background-image: url("https://dailydot.s3.amazonaws.com/uploaded/images/original/2012/4/24/photocopier_nyan.gif");
     background-size: cover;
     background-repeat: no-repeat;
+    border: solid thick black;
 }
 
 .reset-button {
     font-size: 40px;
     text-align: center;
     margin: 60px;
-    padding-top: 30px;
+    padding-top: 40px;
     color: white;
     background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
     background-size: cover;
+}
+.reset-button:hover {
+    color: yellow;
+    animation: updown 2s infinite;
 }
 
 .lever {
     font-size: 30px;
     text-align: center;
     margin: 70px;
-    padding-top: 50px;
+    padding-top: 60px;
     color: white;
     background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
     background-size: cover;
 }
 
+.lever:hover {
+    color: yellow;
+    animation: updown 2s infinite;
+}
 .total-coins-area {
     font-size: 30px;
     text-align: center;
@@ -208,6 +226,10 @@ body {
     background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
     background-size: cover;
 
+}
+.total-coins-area:hover {
+    color: yellow;
+    animation: updown 2s infinite;
 }
 
 .hall-of-fruits {
@@ -250,9 +272,8 @@ body {
 #avocado-value {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    color: white;
+    color: greenyellow;
     background-position: 0%;
-    padding-top: 20px;
 }
 
 #avocado-img {
@@ -284,9 +305,8 @@ body {
 #watermelon-value {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    color: white;
+    color: greenyellow;
     background-position: 0%;
-    padding-top: 20px;
 }
 
 #watermelon-img {
@@ -318,9 +338,8 @@ body {
 #strawberry-value {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
-    color: white;
+    color: greenyellow;
     background-position: 0%;
-    padding-top: 20px;
 
 }
 
@@ -332,7 +351,7 @@ body {
     background-repeat: no-repeat;
     margin: 10px;
     background-position: center;
-    border-radius: 200px;
+    border-radius: 100px;
 }
 
 .banana {
@@ -354,10 +373,8 @@ body {
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
     background-position: 0%;
-    padding-top: 20px;
-    color: white;
+    color: red;
 }
-
 #banana-img {
     grid-column: 1 /  span 1;
     grid-row: 1 / span 2;
@@ -367,4 +384,26 @@ body {
     margin: 10px;
     background-position: center;
     border-radius: 200px;
+}
+
+#total-coins-num {
+    display: flex;
+    float: left;
+    padding-left: 70px;
+    font-size: 25px;
+    margin-right: 0;
+    padding-top: 10px;
+}
+
+#total-coins-top {
+    margin-bottom: 0;
+}
+
+#coin-img {
+    display: flex;
+    float: right;
+    width: 40px;
+    max-height: 60px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
