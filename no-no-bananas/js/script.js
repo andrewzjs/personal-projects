@@ -6,15 +6,13 @@ const hallOfFruits = [
 ];
 
 const fruits = {
-    "Fresh Avocado": 15,
-    "Happy Watermelon": 10,
-    "Sweet Strawberry": 8,
+    "Fresh Avocado": 30,
+    "Happy Watermelon": 15,
+    "Sweet Strawberry": 10,
     "Rotten Banana": 10,
 }
 
-let totalCoins = 20;
 
-// document.getElementById("spin").disabled = !
 
 // Cached Element References
 const topTextEl = document.getElementById("top-text");
@@ -34,20 +32,13 @@ const enterNameEl = document.getElementById("name-input");
 const submitBtnEl = document.getElementById("submit-btn")
 
 
-let numFruits = hallOfFruits.length
-
-
 spinBtnEl.style.opacity = "0.3"
 enterNameEl.style.visibility = "hidden"
 submitBtnEl.style.visibility = "hidden"
-// fruit1El.style.animationPlayState = "paused"
-// fruit2El.style.animationPlayState = "paused"
-// fruit3El.style.animationPlayState = "paused"
-// fruit1SlotEl.style.animationPlayState = "paused"
-// fruit2SlotEl.style.animationPlayState = "paused"
-// fruit3SlotEl.style.animationPlayState = "paused"
-
 topTextEl.style.animationPlayState = "paused"
+
+let numFruits = hallOfFruits.length
+let totalCoins = 20;
 
 let fruit1Key = Object.keys(fruits)[0]
 let fruit2Key = Object.keys(fruits)[1]
@@ -81,6 +72,7 @@ function render() {
     winCondition()
     lossCondition()
 }
+
 function randNumGenerator() {
     randomNum = Math.floor(Math.random() * 4 + 1)
     return randomNum
@@ -181,7 +173,7 @@ function matchCondition1() {
 
 
 function winCondition() {
-    if (totalCoins >= 40) {
+    if (totalCoins >= 35) {
        totalCoinsEl.innerHTML = totalCoins
        totalCoinsEl.style.color = "green"
        spinBtnEl.style.opacity = "0.4"
@@ -286,26 +278,3 @@ function pauseBorderAnimation() {
     fruit2SlotEl.style.animation = "null"
     fruit3SlotEl.style.animation = "null"
 }
-// function startTimer() {
-//     start = setInterval(function() {
-//         spinBtnEl.style.visibility = "visible"
-//         spinBtnEl.addEventListener("click", render)
-//         }, 1000)
-// }
-
-
-// setInterval(function() {
-//     spinBtnEl.style.visibility = "visible"
-//     spinBtnEl.addEventListener("click", render)
-//     }, 1000)
-
-// var timer = setInterval(function() {
-//     if (totalCoins >= 40 || totalCoins <= 0) {
-//         clearInterval(timer)
-//         }
-// }, 1000)   
-
-    // var stopSetInt = setInterval(function() {
-    // spinBtnEl.style.visibility = "visible"
-    // spinBtnEl.addEventListener("click", render)
-    // }, 1000)
