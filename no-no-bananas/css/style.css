@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+@keyframes updown {
+    0% {
+      transform: translateY(-2%);
+    }
+  
+    50% {
+      transform: translateY(2%);
+    }
+  
+    100% {
+      transform: translateY(-2%);
+    } 
+}
+
+
+@keyframes pulse {
+    from, to { box-shadow: 0 0 0 0 yellow;}
+    30% { box-shadow: 0 0 0 6px fuchsia; }
+    60% { box-shadow: 0 0 0 6px aqua;}
+    80% { box-shadow: 0 0 0 2px  palegreen;}
+    100% { box-shadow: 0 0 0 2px  cyan;}
+}
+
+* {
+    font-family: 'Press Start 2P', cursive;
+}
+
+body {
+    background-image: url("https://wallpapers.com/images/hd/night-sky-8-bit-190cuporbadt1g4h.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 1fr;
+    margin: 350px;
+    margin-top: 100px;
+    height: 80vh;
+    max-width: 1600px;
+    max-height: 1000px;
+}
+
+#game-title {
+    grid-column: 1 / 7;
+    grid-row: 1 / 1;
+    text-align: center;
+    font-size: 60px; 
+    color: white;
+}
+
+.high-score {
+    grid-column: 1 / 1;
+    grid-row: 2 / 7;
+    background-color: transparent;
+    color: white;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 40px;
+}
+.main-game-area {
+    display: grid;
+    grid-column: 2 / span 3;
+    grid-row: 2 / span 5;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.1fr 1fr 0.4fr;
+   background-image: url("https://gifdb.com/images/high/pixel-art-8bit-city-objgw22cel46yk7h.gif");
+    border-radius: 40px;
+}
+
+.slot1 {
+    display: grid;
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+    background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
+    margin: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.2fr 1fr 0.2fr;
+    text-align: center;
+    border-radius: 100px;
+    animation: pulse 1s infinite;
+}
+.cell1-top {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    padding-top: 10px;
+    color: white;
+}
+.cell1-bottom {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+    padding-bottom: 20px;
+    color: white;
+}
+#cell1-fruit {
+    grid-column: 1 / span 4;
+    grid-row: 2 / span 1 ;
+    background-image: url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5px 20px;
+    padding-bottom: 10px;
+    background-position: center;
+    border-radius: 200px;
+    animation: updown 2s infinite;
+}
+
+
+.slot2 {
+    display: grid;
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    margin: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.2fr 1fr 0.2fr;
+    text-align: center;
+    border-radius: 100px;
+    background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
+    animation: pulse 1s infinite;
+}
+.cell2-top {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    padding-top: 10px;
+    color: white;
+}
+.cell2-bottom {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+    padding-bottom: 20px;
+    color: white;
+}
+#cell2-fruit {
+    grid-column: 1 / span 4;
+    grid-row: 2 / span 1 ;
+    background-image: url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5px 20px;
+    padding-bottom: 10px;
+    background-position: center;
+    border-radius: 200px;
+    animation: updown 2.5s infinite;
+}
+
+.slot3 {
+    display: grid;
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    margin: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 0.2fr 1fr 0.2fr;
+    text-align: center;
+    border-radius: 100px;
+    background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
+    animation: pulse 1s infinite;
+}
+.cell3-top {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    padding-top: 10px;
+    color: white;
+}
+.cell3-bottom {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+    padding-bottom: 10px;
+    color: white;
+}
+#cell3-fruit {
+    grid-column: 1 / span 4;
+    grid-row: 2 / span 1 ;
+    background-image: url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 5px 20px;
+    padding-bottom: 10px;
+    background-position: center;
+    border-radius: 200px;
+    animation: updown 3.5s infinite;
+}
+.top-text-area {
+    display: grid;
+    grid-column: 1 / span 3;
+    grid-row: 1 / span 1;
+    grid-template-columns: 0.5fr 0.5fr 1fr 0.5fr 0.5fr;
+    grid-template-rows: 1fr;
+}
+
+#top-text {
+    grid-column: 2 / span 3 ;
+    grid-row: 1 / span 1;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;;
+    color: white;
+    background-image: url("https://i.pinimg.com/originals/e2/74/e1/e274e17933fea9ce7bcc67a186c781c6.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: solid thick black;
+    animation: pulse 1s repeat;
+    max-height: 25px;
+}
+
+.reset-button {
+    font-size: 40px;
+    text-align: center;
+    margin: 60px;
+    padding-top: 40px;
+    padding-right: 40px;
+    color: white;
+    background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
+    background-size: cover;
+    position: relative;
+}
+.reset-button:hover {
+    color: aqua;
+    animation: updown 2s ;
+}
+
+.lever {
+    font-size: 30px;
+    text-align: center;
+    margin: 70px;
+    padding-top: 60px;
+    color: white;
+    background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
+    background-size: cover;
+}
+
+.lever:hover {
+    color: magenta;
+    animation: updown 2s infinite;
+}
+.total-coins-area {
+    font-size: 30px;
+    text-align: center;
+    margin: 40px;
+    color: white;
+    background-image: url("https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg");
+    background-size: cover;
+
+}
+.total-coins-area:hover {
+    color: yellow;
+    animation: updown 2s infinite;
+}
+
+.hall-of-fruits {
+    display: grid;
+    grid-column: 5 / span 1;
+    grid-row: 2 / span 6;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.6fr 1fr 1fr 1fr 1fr;
+    background-color: transparent;
+    margin-left: 10px;
+    border-radius: 40px;
+}
+
+#hof-title {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    font-size: 25px;
+    text-align: center;
+    padding-top: 10px;
+    color: white;
+}
+
+.avocado {
+    display: grid;
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+}
+
+#fresh-avocado {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    padding-top: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+#avocado-value {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    color: greenyellow;
+    background-position: 0%;
+}
+
+#avocado-img {
+    grid-column: 1 /  span 1;
+    grid-row: 1 / span 2;
+    background-image: url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    background-position: center;
+    border-radius: 200px;
+}
+
+.watermelon {
+    display: grid;
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+}
+#happy-watermelon {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    padding-top: 20px;
+    color: white;
+}
+
+#watermelon-value {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    color: greenyellow;
+    background-position: 0%;
+}
+
+#watermelon-img {
+    grid-column: 1 /  span 1;
+    grid-row: 1 / span 2;
+    background-image: url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    background-position: center;
+    border-radius: 200px;
+}
+
+.strawberry {
+    display: grid;
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+}
+#sweet-strawberry {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    padding-top: 20px;
+    color: white;
+}
+
+#strawberry-value {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    color: greenyellow;
+    background-position: 0%;
+
+}
+
+#strawberry-img {
+    grid-column: 1 /  span 1;
+    grid-row: 1 / span 2;
+    background-image: url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    background-position: center;
+    border-radius: 100px;
+}
+
+.banana {
+    display: grid;
+    grid-row: 5 / span 1;
+    grid-column: 1 / span 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+}
+#rotten-banana {
+    grid-column: 2 / span 1;
+    grid-row: 1 / span 1;
+    padding-top: 20px;
+    color: white;
+}
+
+#banana-value {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+    background-position: 0%;
+    color: red;
+}
+#banana-img {
+    grid-column: 1 /  span 1;
+    grid-row: 1 / span 2;
+    background-image: url("https://ih1.redbubble.net/image.1269997801.9804/st,small,507x507-pad,600x600,f8f8f8.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+    background-position: center;
+    border-radius: 200px;
+}
+
+#total-coins-num {
+    display: flex;
+    float: left;
+    padding-left: 70px;
+    font-size: 25px;
+    margin-right: 0;
+    padding-top: 10px;
+}
+
+#total-coins-top {
+    margin-bottom: 0;
+}
+
+#coin-img {
+    display: flex;
+    float: right;
+    width: 40px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+
+#name-input {
+    z-index: 5;
+    height: 40px;
+    width: 120px;
+    font-size: 18px;
+    margin-left: 30px;
+    text-align: center;
+}
+
+#reset {
+    position: absolute;
+}
+
+#submit-btn {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 30px;
+}
