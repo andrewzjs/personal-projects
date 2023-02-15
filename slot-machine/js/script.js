@@ -2,15 +2,15 @@
 
 const hallOfFruits = [
     ["freshAvocado", 10, 1],
-    ["happyWatermelon", 6, 2],
-    ["sweetStrawberry", 3, 3],
+    ["happyWatermelon", 8, 2],
+    ["sweetStrawberry", 5, 3],
     ["rottenBanana", -10, 4],
 ];
 
 const fruits = {
     "Fresh Avocado": 10,
-    "Happy Watermelon": 6,
-    "Sweet Strawberry": 3,
+    "Happy Watermelon": 8,
+    "Sweet Strawberry": 5,
     "Rotten Banana": 10,
 }
 
@@ -31,7 +31,7 @@ const newGameBtnEl = document.getElementById("reset");
 const spinBtnEl = document.getElementById("spin");
 
 let numFruits = hallOfFruits.length
-spinBtnEl.style.opacity = "0.4"
+spinBtnEl.style.opacity = "0.3"
 
 
 let fruit1Key = Object.keys(fruits)[0]
@@ -62,7 +62,7 @@ function render() {
     lossCondition()
 }
 function randNumGenerator() {
-    randomNum = Math.floor(Math.random() * 5)
+    randomNum = Math.floor(Math.random() * 4 + 1)
     console.log(randomNum)
     return randomNum
 }

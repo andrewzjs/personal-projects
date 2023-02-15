@@ -200,7 +200,7 @@ body {
     background-size: cover;
 }
 .reset-button:hover {
-    color: yellow;
+    color: aqua;
     animation: updown 2s infinite;
 }
 
@@ -215,7 +215,7 @@ body {
 }
 
 .lever:hover {
-    color: yellow;
+    color: magenta;
     animation: updown 2s infinite;
 }
 .total-coins-area {
