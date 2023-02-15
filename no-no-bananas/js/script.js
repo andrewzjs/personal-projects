@@ -12,8 +12,6 @@ const fruits = {
     "Rotten Banana": 10,
 }
 
-
-
 // Cached Element References
 const topTextEl = document.getElementById("top-text");
 const totalCoinsEl = document.getElementById("total-coins-num");
@@ -29,8 +27,12 @@ const fruit3BtmEl = document.querySelector(".cell3-bottom");
 const newGameBtnEl = document.getElementById("reset");
 const spinBtnEl = document.getElementById("spin");
 const enterNameEl = document.getElementById("name-input");
-const submitBtnEl = document.getElementById("submit-btn")
-
+const submitBtnEl = document.getElementById("submit-btn");
+const gameStartEl = document.getElementById("game-start");
+const spinBeepEl = document.getElementById("spin-beep");
+const gameOverEl = document.getElementById("game-over");
+const gameMatchEl = document.getElementById("game-match");
+const gameWinEl = document.getElementById("game-win");
 
 spinBtnEl.style.opacity = "0.3"
 enterNameEl.style.visibility = "hidden"
@@ -50,7 +52,6 @@ let fruit2Value = Object.values(fruits)[1]
 let fruit3Value = Object.values(fruits)[2]
 let fruit4Value = Object.values(fruits)[3]
 
-
 // Event Listeners
 
 newGameBtnEl.addEventListener("click", newGame)
@@ -61,6 +62,8 @@ submitBtnEl.addEventListener("click", newProfile)
 pauseBorderAnimation()
 
 function render() {
+    spinBeepEl.volume = 0.1
+    spinBeepEl.play()
     pauseBorderAnimation()
     topTextEl.innerHTML = `Welcome, ${enterNameEl.value}! ʕ•́ᴥ•̀ʔっ`
     topTextEl.style.color = "white"
@@ -76,6 +79,9 @@ function render() {
 function randNumGenerator() {
     randomNum = Math.floor(Math.random() * 4 + 1)
     return randomNum
+    // newFruitArray = [4, 4, 3, 3, 3, 2, 2, 2, 1, 1]
+    // randomNum = Math.floor(Math.random() * 10)
+    // return newFruitArray[randomNum]
 }
 
 function fruitSlot1() {
@@ -145,23 +151,35 @@ function matchCondition1() {
             topTextEl.innerHTML = `It's a Match! + ${fruit1Value} coins`
             topTextEl.style.color = "yellowgreen"
             playBorderAnimation()
+            spinBeepEl.pause()
+            gameMatchEl.volume = 0.8
+            gameMatchEl.play()
         } else if (fruit1BtmEl.innerHTML === fruit2Key) {
             totalCoins += fruit2Value
             totalCoinsEl.innerHTML = totalCoins
             topTextEl.innerHTML = `It's a Match! + ${fruit2Value} coins`
             topTextEl.style.color = "yellowgreen"
             playBorderAnimation()
+            spinBeepEl.pause()
+            gameMatchEl.volume = 0.8
+            gameMatchEl.play()
         } else if (fruit1BtmEl.innerHTML === fruit3Key) {
             totalCoins +=  fruit3Value
             totalCoinsEl.innerHTML = totalCoins
             topTextEl.innerHTML = `It's a Match! + ${fruit3Value} coins` 
             topTextEl.style.color = "yellowgreen"
             playBorderAnimation()
+            spinBeepEl.pause()
+            gameMatchEl.volume = 0.8
+            gameMatchEl.play()
         } else if (fruit1BtmEl.innerHTML === fruit4Key) {
             totalCoins -=  fruit4Value
             totalCoinsEl.innerHTML = totalCoins
             topTextEl.innerHTML = `Ew, Rotten Bananas! - ${fruit4Value} coins`
             topTextEl.style.color = "red"
+            spinBeepEl.pause()
+            gameOverEl.volume = 0.8
+            gameOverEl.play()
         }
     } else {
         totalCoins -= 1
@@ -173,13 +191,18 @@ function matchCondition1() {
 
 
 function winCondition() {
-    if (totalCoins >= 35) {
+    if (totalCoins >= 40) {
        totalCoinsEl.innerHTML = totalCoins
        totalCoinsEl.style.color = "green"
        spinBtnEl.style.opacity = "0.4"
        topTextEl.innerHTML = "CONGRATULATIONS!! YOU WON!"
        topTextEl.style.color = "yellowgreen"
        playBorderAnimation()
+       gameMatchEl.pause()
+       spinBeepEl.pause()
+       gameWinEl.volume = 0.8
+       gameWinEl.duration = "2s"
+       gameWinEl.play()
        spinBtnEl.removeEventListener("click", render)
        stopTimer() 
         
@@ -198,6 +221,10 @@ function lossCondition() {
         spinBtnEl.removeEventListener("click", render)
         spinBtnEl.style.opacity = "0.4"
         stopTimer() 
+        spinBeepEl.pause()
+        gameOverEl.volume = 0.8
+        gameOverEl.duration = "2s"
+        gameOverEl.play()
     } else {
         spinBtnEl.style.visibility = "visible"
         spinBtnEl.addEventListener("click", render)
@@ -207,6 +234,9 @@ function lossCondition() {
 
 function newGame() {
     pauseBorderAnimation()
+    gameStartEl.volume = 0.8
+    gameStartEl.duration = "2s"
+    gameStartEl.play()
     spinBtnEl.style.opacity = "0.3"
     spinBtnEl.style.disabled = true
     enterNameEl.style.visibility = "hidden"
@@ -229,6 +259,8 @@ function newGame() {
 }
 
 function newProfile() {
+    gameStartEl.volume = 0.8
+    gameStartEl.play()
     spinBtnEl.addEventListener("click", render)
     enterNameEl.style.visibility = "hidden"
     submitBtnEl.style.visibility = "visible"
@@ -268,9 +300,7 @@ function playBorderAnimation() {
     fruit1SlotEl.style.animation = "pulse 1s infinite"
     fruit2SlotEl.style.animation = "pulse 1s infinite"
     fruit3SlotEl.style.animation = "pulse 1s infinite"
-    fruit1SlotEl.style.animationPlayState = "running"
-    fruit2SlotEl.style.animationPlayState = "running"
-    fruit3SlotEl.style.animationPlayState = "running"
+
 }
 
 function pauseBorderAnimation() {
