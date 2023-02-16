@@ -5,14 +5,14 @@
 
 
 ## Screenshots
-### [Initial Game state](/screenshots/game-screenshot.PNG?raw=true)
-### [Win Game State](/screenshots/game-win-screenshot.PNG?raw=true)
+### ![Initial Game state](/personal-projects/no-no-bananas/screenshots/game-screenshot.PNG?raw=true)
+### ![Win Game State](/personal-projects/no-no-bananas/screenshots/game-win-screenshot.PNG?raw=true)
 
 
 ## Rules/Guidelines
 
 ### This game is optimized for monitors with a screen resolution of 1440p(QHD).
-### It is recommended for players with a lower screen resolution the "zoom-out" function with ctrl + mousewheel for optimal visual experience.
+### It is recommended for players with a lower screen resolution to zoom-out using ctrl + mousewheel until all the elements fit in the screen for optimal visual experience.
 
 ## Gameplay
 
