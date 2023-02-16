@@ -5,8 +5,8 @@
 
 
 ## Screenshots
-### ![Initial Game state](/personal-projects/no-no-bananas/screenshots/game-screenshot.PNG?raw=true)
-### ![Win Game State](/personal-projects/no-no-bananas/screenshots/game-win-screenshot.PNG?raw=true)
+### ![Initial Game state](/no-no-bananas/screenshots/game-screenshot.PNG?raw=true)
+### ![Win Game State](/no-no-bananas/screenshots/game-win-screenshot.PNG?raw=true)
 
 
 ## Rules/Guidelines
