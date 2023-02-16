@@ -5,8 +5,8 @@
 
 
 ## Screenshots
-### ![Initial Game state](/screenshots/game-screenshot.PNG?raw=true)
-### ![Win Game State](/screenshots/game-screenshot.PNG?raw=true)
+### [Initial Game state](/screenshots/game-screenshot.PNG?raw=true)
+### [Win Game State](/screenshots/game-win-screenshot.PNG?raw=true)
 
 
 ## Rules/Guidelines
