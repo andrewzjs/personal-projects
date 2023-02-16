@@ -33,11 +33,19 @@ const spinBeepEl = document.getElementById("spin-beep");
 const gameOverEl = document.getElementById("game-over");
 const gameMatchEl = document.getElementById("game-match");
 const gameWinEl = document.getElementById("game-win");
+const mainGameAreaEl = document.getElementById("main-game-area")
+const userNameEl = document.getElementById("user-name")
+const userNameLoserEl = document.getElementById("loser")
+const backgroundMusicEl = document.getElementById("background-music")
 
 spinBtnEl.style.opacity = "0.3"
 enterNameEl.style.visibility = "hidden"
 submitBtnEl.style.visibility = "hidden"
-topTextEl.style.animationPlayState = "paused"
+userNameEl.style.visibility = "hidden"
+userNameLoserEl.style.visibility = "hidden"
+backgroundMusicEl.volume = 0.12
+backgroundMusicEl.style.visibility = "hidden"
+
 
 let numFruits = hallOfFruits.length
 let totalCoins = 20;
@@ -59,12 +67,13 @@ submitBtnEl.addEventListener("click", newProfile)
 
 
 // Functions 
-pauseBorderAnimation()
+
+pauseMatchAnimation()
 
 function render() {
     spinBeepEl.volume = 0.1
     spinBeepEl.play()
-    pauseBorderAnimation()
+    pauseMatchAnimation()
     topTextEl.innerHTML = `Welcome, ${enterNameEl.value}! ʕ•́ᴥ•̀ʔっ`
     topTextEl.style.color = "white"
     topTextEl.style.animationPlayState = "running"
@@ -74,6 +83,8 @@ function render() {
     matchCondition1()
     winCondition()
     lossCondition()
+    userNameEl.innerHTML = `${enterNameEl.value}: ${totalCoinsEl.innerText}`
+    userNameLoserEl.innerHTML = `${enterNameEl.value}: ${totalCoinsEl.innerText}`
 }
 
 function randNumGenerator() {
@@ -150,35 +161,27 @@ function matchCondition1() {
             totalCoinsEl.innerHTML = totalCoins
             topTextEl.innerHTML = `It's a Match! + ${fruit1Value} coins`
             topTextEl.style.color = "yellowgreen"
-            playBorderAnimation()
-            spinBeepEl.pause()
-            gameMatchEl.volume = 0.8
+            playMatchAnimation()
             gameMatchEl.play()
         } else if (fruit1BtmEl.innerHTML === fruit2Key) {
             totalCoins += fruit2Value
             totalCoinsEl.innerHTML = totalCoins
             topTextEl.innerHTML = `It's a Match! + ${fruit2Value} coins`
             topTextEl.style.color = "yellowgreen"
-            playBorderAnimation()
-            spinBeepEl.pause()
-            gameMatchEl.volume = 0.8
+            playMatchAnimation()
             gameMatchEl.play()
         } else if (fruit1BtmEl.innerHTML === fruit3Key) {
             totalCoins +=  fruit3Value
             totalCoinsEl.innerHTML = totalCoins
             topTextEl.innerHTML = `It's a Match! + ${fruit3Value} coins` 
             topTextEl.style.color = "yellowgreen"
-            playBorderAnimation()
-            spinBeepEl.pause()
-            gameMatchEl.volume = 0.8
+            playMatchAnimation()
             gameMatchEl.play()
         } else if (fruit1BtmEl.innerHTML === fruit4Key) {
             totalCoins -=  fruit4Value
             totalCoinsEl.innerHTML = totalCoins
             topTextEl.innerHTML = `Ew, Rotten Bananas! - ${fruit4Value} coins`
             topTextEl.style.color = "red"
-            spinBeepEl.pause()
-            gameOverEl.volume = 0.8
             gameOverEl.play()
         }
     } else {
@@ -191,13 +194,13 @@ function matchCondition1() {
 
 
 function winCondition() {
-    if (totalCoins >= 40) {
+    if (totalCoins >= 35) {
        totalCoinsEl.innerHTML = totalCoins
        totalCoinsEl.style.color = "green"
        spinBtnEl.style.opacity = "0.4"
-       topTextEl.innerHTML = "CONGRATULATIONS!! YOU WON!"
+       topTextEl.innerHTML = "CONGRATULATIONS!! YOU WON"
        topTextEl.style.color = "yellowgreen"
-       playBorderAnimation()
+       playMatchAnimation()
        gameMatchEl.pause()
        spinBeepEl.pause()
        gameWinEl.volume = 0.8
@@ -205,6 +208,7 @@ function winCondition() {
        gameWinEl.play()
        spinBtnEl.removeEventListener("click", render)
        stopTimer() 
+       userNameEl.style.visibility = "visible"
         
     } else {
         spinBtnEl.addEventListener("click", render)
@@ -222,9 +226,8 @@ function lossCondition() {
         spinBtnEl.style.opacity = "0.4"
         stopTimer() 
         spinBeepEl.pause()
-        gameOverEl.volume = 0.8
-        gameOverEl.duration = "2s"
         gameOverEl.play()
+        userNameLoserEl.style.visibility = "visible"
     } else {
         spinBtnEl.style.visibility = "visible"
         spinBtnEl.addEventListener("click", render)
@@ -233,7 +236,10 @@ function lossCondition() {
 }
 
 function newGame() {
-    pauseBorderAnimation()
+    backgroundMusicEl.play()
+    pauseMatchAnimation()
+    userNameEl.style.visibility = "hidden"
+    userNameLoserEl.style.visibility = "hidden"
     gameStartEl.volume = 0.8
     gameStartEl.duration = "2s"
     gameStartEl.play()
@@ -296,14 +302,14 @@ function stopTimer() {
     document.querySelector(".lever").style.visibility = "hidden"
 }
 
-function playBorderAnimation() {
+function playMatchAnimation() {
     fruit1SlotEl.style.animation = "pulse 1s infinite"
     fruit2SlotEl.style.animation = "pulse 1s infinite"
     fruit3SlotEl.style.animation = "pulse 1s infinite"
 
 }
 
-function pauseBorderAnimation() {
+function pauseMatchAnimation() {
     fruit1SlotEl.style.animation = "null"
     fruit2SlotEl.style.animation = "null"
     fruit3SlotEl.style.animation = "null"

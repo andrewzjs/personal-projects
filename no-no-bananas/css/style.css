@@ -41,6 +41,7 @@ body {
     height: 80vh;
     max-width: 1600px;
     max-height: 1000px;
+    
 }
 
 #game-title {
@@ -49,6 +50,7 @@ body {
     text-align: center;
     font-size: 60px; 
     color: white;
+
 }
 
 .high-score {
@@ -200,7 +202,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     border: solid thick black;
-    animation: pulse 1s repeat;
     max-height: 25px;
 }
 
@@ -232,7 +233,7 @@ body {
 
 .lever:hover {
     color: magenta;
-    animation: updown 2s infinite;
+    animation: updown 2s;
 }
 .total-coins-area {
     font-size: 30px;
@@ -302,6 +303,9 @@ body {
     background-position: center;
     border-radius: 200px;
 }
+#avocado-img:hover {
+    animation: updown 3.5s infinite;
+}
 
 .watermelon {
     display: grid;
@@ -334,6 +338,9 @@ body {
     margin: 10px;
     background-position: center;
     border-radius: 200px;
+}
+#watermelon-img:hover {
+    animation: updown 3.5s infinite;
 }
 
 .strawberry {
@@ -369,7 +376,9 @@ body {
     background-position: center;
     border-radius: 100px;
 }
-
+#strawberry-img:hover {
+    animation: updown 3.5s infinite;
+}
 .banana {
     display: grid;
     grid-row: 5 / span 1;
@@ -401,6 +410,9 @@ body {
     background-position: center;
     border-radius: 200px;
 }
+#banana-img:hover {
+    animation: updown 3.5s infinite;
+}
 
 #total-coins-num {
     display: flex;
@@ -423,6 +435,7 @@ body {
     padding-bottom: 30px;
 }
 
+
 #name-input {
     z-index: 5;
     height: 40px;
@@ -437,7 +450,30 @@ body {
 }
 
 #submit-btn {
-    font-size: 18px;
+    font-size: 19px;
     text-align: center;
     margin-left: 30px;
+}
+#submit-btn:hover {
+    background-color: greenyellow;
+}
+
+.high-score {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    margin: 20px;
+}
+
+#user-name {
+    animation: pulse 1s infinite;
+}
+#loser {
+    animation: pulse 1s infinite;
+}
+
+.score-name:hover {
+    background-color: blue;
 }
