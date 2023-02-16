@@ -1,7 +1,7 @@
-# No No Bananas 
+# No No Bananas (Slot Machine)
 
-## Description
- **No No Bananas** is based on a slot machine game, but with a little twist. Matching fruits will give points, with the exception of the **Rotten Banana**, which will give -10 points. I created this game with an **8-bit art style**, because the 1st generation pokemon games were a big part of my childhood and still influence me to this day. 
+## Game Description
+ **No No Bananas** is based on a slot machine game, but with a little twist. Matching fruits will give points, with the exception of the **Rotten Banana**, which will give -20 points. I created this game with an **8-bit art style**, because the 1st generation pokemon games were a big part of my childhood and still influence me to this day. 
 
  ![Initial Game state](/no-no-bananas/screenshots/game-screenshot.PNG?raw=true)
  ![Win Game State](/no-no-bananas/screenshots/game-win-screenshot.PNG?raw=true)
@@ -17,20 +17,19 @@
  1. “Fresh Avocado” x 3 = +30 coins 
  2. “Happy Watermelon” x 3 = +15 coins 
  3. “Sweet Strawberry” x 3 = +10 coins 
- 4. “Rotten Banana” x 3 = -10 coins 
+ 4. “Rotten Banana” x 3 = -20 coins 
 
  Player always starts with 20 coins.
  Player loses 1 coin per turn if the fruits do not match up. 
 
 ## Game will end if one of the following conditions are met: 
- 1. Player score is greater than or equal to 35 coins. Player's name will appear under "Fruit Challengers" (win) 
+ 1. Player score is greater than or equal to 40 coins. Player's name will appear under "Fruit Challengers" (win) 
  2. Player score is less than or equal to 0 coins. Player's name will appear under "Fruit Noobs" (loss) 
  3. Player clicks on the "New Game" button.
 
 ## Icebox 
-1. Add weighted probability, so some fruits are easier to obtain than others.
-2. Add a spinning animation to each slot after hitting the "spin" button, to closely mimic a traditional slot machine.
-3. Add a legitimate "high score" section that would actually store data in a server. 
+ 1. Add a spinning animation to each slot after hitting the "spin" button, to closely mimic a traditional slot machine.
+ 2. Add a legitimate "high score" section that would actually store data in a server. 
 
 ## Attributions
 

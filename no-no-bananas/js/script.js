@@ -1,18 +1,32 @@
 const hallOfFruits = [
-    ["freshAvocado", 10, 1],
-    ["happyWatermelon", 8, 2],
-    ["sweetStrawberry", 5, 3],
-    ["rottenBanana", -10, 4],
+    ["freshAvocado", 30, 1],
+    ["happyWatermelon", 15, 2],
+    ["sweetStrawberry", 10, 3],
+    ["rottenBanana", -20, 4],
 ];
 
 const fruits = {
     "Fresh Avocado": 30,
     "Happy Watermelon": 15,
     "Sweet Strawberry": 10,
-    "Rotten Banana": 10,
+    "Rotten Banana": 20,
 }
 
+let totalCoins = 20;
+
+let fruit1Key = Object.keys(fruits)[0]
+let fruit2Key = Object.keys(fruits)[1]
+let fruit3Key = Object.keys(fruits)[2]
+let fruit4Key = Object.keys(fruits)[3]
+
+let fruit1Value = Object.values(fruits)[0]
+let fruit2Value = Object.values(fruits)[1]
+let fruit3Value = Object.values(fruits)[2]
+let fruit4Value = Object.values(fruits)[3]
+
+
 // Cached Element References
+
 const topTextEl = document.getElementById("top-text");
 const totalCoinsEl = document.getElementById("total-coins-num");
 const fruit1El = document.getElementById("cell1-fruit");
@@ -47,19 +61,6 @@ backgroundMusicEl.volume = 0.12
 backgroundMusicEl.style.visibility = "hidden"
 
 
-let numFruits = hallOfFruits.length
-let totalCoins = 20;
-
-let fruit1Key = Object.keys(fruits)[0]
-let fruit2Key = Object.keys(fruits)[1]
-let fruit3Key = Object.keys(fruits)[2]
-let fruit4Key = Object.keys(fruits)[3]
-
-let fruit1Value = Object.values(fruits)[0]
-let fruit2Value = Object.values(fruits)[1]
-let fruit3Value = Object.values(fruits)[2]
-let fruit4Value = Object.values(fruits)[3]
-
 // Event Listeners
 
 newGameBtnEl.addEventListener("click", newGame)
@@ -86,25 +87,25 @@ function render() {
 }
 
 function randNumGenerator() {
-    randomNum = Math.floor(Math.random() * 4 + 1)
-    return randomNum
-    // newFruitArray = [4, 4, 3, 3, 3, 2, 2, 2, 1, 1]
-    // randomNum = Math.floor(Math.random() * 10)
-    // return newFruitArray[randomNum]
+    // randomNum = Math.floor(Math.random() * 4 + 1)
+    // return randomNum
+    newFruitArray = [4, 3, 3, 3, 2, 2, 2, 2, 1, 1]
+    randomNum = Math.floor(Math.random() * 10)
+    return newFruitArray[randomNum]
 }
 
 function fruitSlot1() {
     randNumGenerator()
-    if (randomNum === hallOfFruits[0][2]) {
+    if (newFruitArray[randomNum] === hallOfFruits[0][2]) {
         fruit1El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000")`
         fruit1BtmEl.innerHTML = "Fresh Avocado"
-    } else if (randomNum === hallOfFruits[1][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[1][2]) {
         fruit1El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg")`
         fruit1BtmEl.innerHTML = "Happy Watermelon"
-    } else if (randomNum === hallOfFruits[2][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[2][2]) {
         fruit1El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000")`
         fruit1BtmEl.innerHTML = "Sweet Strawberry"
-    } else if (randomNum === hallOfFruits[3][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[3][2]) {
         fruit1El.style.backgroundImage = `url("https://ih1.redbubble.net/image.1269997801.9804/st,small,507x507-pad,600x600,f8f8f8.jpg")`
         fruit1BtmEl.innerHTML  = "Rotten Banana"
     } else {
@@ -114,16 +115,16 @@ function fruitSlot1() {
 
 function fruitSlot2() {
     randNumGenerator()
-    if (randomNum === hallOfFruits[0][2]) {
+    if (newFruitArray[randomNum] === hallOfFruits[0][2]) {
         fruit2El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000")`
         fruit2BtmEl.innerHTML = "Fresh Avocado"
-    } else if (randomNum === hallOfFruits[1][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[1][2]) {
         fruit2El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg")`
         fruit2BtmEl.innerHTML = "Happy Watermelon"
-    } else if (randomNum === hallOfFruits[2][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[2][2]) {
         fruit2El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000")`
         fruit2BtmEl.innerHTML = "Sweet Strawberry"
-    } else if (randomNum === hallOfFruits[3][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[3][2]) {
         fruit2El.style.backgroundImage = `url("https://ih1.redbubble.net/image.1269997801.9804/st,small,507x507-pad,600x600,f8f8f8.jpg")`
         fruit2BtmEl.innerHTML  = "Rotten Banana"
     } else {
@@ -134,16 +135,16 @@ function fruitSlot2() {
 
 function fruitSlot3() {
     randNumGenerator()
-    if (randomNum === hallOfFruits[0][2]) {
+    if (newFruitArray[randomNum] === hallOfFruits[0][2]) {
         fruit3El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000")`
         fruit3BtmEl.innerHTML = "Fresh Avocado"
-    } else if (randomNum === hallOfFruits[1][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[1][2]) {
         fruit3El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg")`
         fruit3BtmEl.innerHTML = "Happy Watermelon"
-    } else if (randomNum === hallOfFruits[2][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[2][2]) {
         fruit3El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000")`
         fruit3BtmEl.innerHTML = "Sweet Strawberry"
-    } else if (randomNum === hallOfFruits[3][2]) {
+    } else if (newFruitArray[randomNum] === hallOfFruits[3][2]) {
         fruit3El.style.backgroundImage = `url("https://ih1.redbubble.net/image.1269997801.9804/st,small,507x507-pad,600x600,f8f8f8.jpg")`
         fruit3BtmEl.innerHTML = "Rotten Banana"
     } else {
@@ -193,7 +194,7 @@ function matchCondition1() {
 
 
 function winCondition() {
-    if (totalCoins >= 35) {
+    if (totalCoins >= 40) {
        totalCoinsEl.innerHTML = totalCoins
        totalCoinsEl.style.color = "green"
        spinBtnEl.style.opacity = "0.4"
@@ -255,7 +256,7 @@ function newGame() {
     fruit3El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000")`
     totalCoinsEl.innerHTML = "20"
     totalCoins = 20
-    topTextEl.innerHTML = "Welcome! ʕ•́ᴥ•̀ʔっ"
+    topTextEl.innerHTML = "Enter your name"
     topTextEl.style.color = "white"
     fruit1BtmEl.innerHTML = "spin"
     fruit2BtmEl.innerHTML = "to"
