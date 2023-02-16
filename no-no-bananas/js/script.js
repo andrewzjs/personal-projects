@@ -71,12 +71,10 @@ submitBtnEl.addEventListener("click", newProfile)
 pauseMatchAnimation()
 
 function render() {
+    pauseMatchAnimation()
     spinBeepEl.volume = 0.1
     spinBeepEl.play()
-    pauseMatchAnimation()
     topTextEl.innerHTML = `Welcome, ${enterNameEl.value}! ʕ•́ᴥ•̀ʔっ`
-    topTextEl.style.color = "white"
-    topTextEl.style.animationPlayState = "running"
     fruitSlot1()
     fruitSlot2()
     fruitSlot3()
