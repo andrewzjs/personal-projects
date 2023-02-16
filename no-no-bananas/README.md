@@ -1,8 +1,8 @@
 # No No Bananas (Slot Machine)
 
 ## Game Description
- **No No Bananas** is based on a slot machine game, but with a little twist. Matching fruits will give points, with the exception of the **Rotten Banana**, which will give -20 points. I created this game with an **8-bit art style**, because the 1st generation pokemon games were a big part of my childhood and still influence me to this day. 
- [Press to Play](https://andrewzjs.github.io/personal-projects/no-no-bananas/)
+ [No No Bananas](https://andrewzjs.github.io/personal-projects/no-no-bananas/) is based on a slot machine game, but with a little twist. Matching fruits will give points, with the exception of the **Rotten Banana**, which will give -20 points. I created this game with an **8-bit art style**, because the 1st generation pokemon games were a big part of my childhood and still influence me to this day. 
+
  ![Initial Game state](/no-no-bananas/screenshots/game-screenshot.PNG?raw=true)
  ![Win Game State](/no-no-bananas/screenshots/game-win-screenshot.PNG?raw=true)
 
