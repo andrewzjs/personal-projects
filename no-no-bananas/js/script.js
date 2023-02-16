@@ -71,6 +71,58 @@ submitBtnEl.addEventListener("click", newProfile)
 
 pauseMatchAnimation()
 
+function newGame() {
+    backgroundMusicEl.play()
+    pauseMatchAnimation()
+    userNameEl.style.visibility = "hidden"
+    userNameLoserEl.style.visibility = "hidden"
+    gameStartEl.volume = 0.8
+    gameStartEl.duration = "2s"
+    gameStartEl.play()
+    spinBtnEl.style.opacity = "0.3"
+    spinBtnEl.style.disabled = true
+    enterNameEl.style.visibility = "hidden"
+    submitBtnEl.style.visibility = "hidden"
+    enterNameEl.style.visibility = "visible"
+    newGameBtnEl.style.visibility = "hidden"
+    submitBtnEl.style.visibility = "visible"
+    totalCoinsEl.style.color = "white"
+    fruit1El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000")`
+    fruit2El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg")`
+    fruit3El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000")`
+    totalCoinsEl.innerHTML = "20"
+    totalCoins = 20
+    topTextEl.innerHTML = "Enter your name"
+    topTextEl.style.color = "white"
+    fruit1BtmEl.innerHTML = "spin"
+    fruit2BtmEl.innerHTML = "to"
+    fruit3BtmEl.innerHTML = "win!"
+    stopTimer()
+}
+
+function newProfile() {
+    gameStartEl.volume = 0.8
+    gameStartEl.play()
+    spinBtnEl.addEventListener("click", render)
+    enterNameEl.style.visibility = "hidden"
+    submitBtnEl.style.visibility = "visible"
+    newGameBtnEl.style.visibility = "visible"
+    submitBtnEl.style.visibility = "hidden"
+    spinBtnEl.style.opacity = "1"
+    totalCoinsEl.style.color = "white"
+    fruit1El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000")`
+    fruit2El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg")`
+    fruit3El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000")`
+    totalCoinsEl.innerHTML = "20"
+    totalCoins = 20
+    topTextEl.innerHTML = `Welcome, ${enterNameEl.value}! ʕ•́ᴥ•̀ʔっ`
+    topTextEl.style.color = "white"
+    fruit1BtmEl.innerHTML = "spin"
+    fruit2BtmEl.innerHTML = "to"
+    fruit3BtmEl.innerHTML = "win!"
+    startTimer()
+}
+
 function render() {
     pauseMatchAnimation()
     spinBeepEl.volume = 0.1
@@ -233,35 +285,6 @@ function lossCondition() {
         spinBtnEl.addEventListener("click", render)
     }
     spinBtnEl.style.visibility = "hidden"
-}
-
-function newGame() {
-    backgroundMusicEl.play()
-    pauseMatchAnimation()
-    userNameEl.style.visibility = "hidden"
-    userNameLoserEl.style.visibility = "hidden"
-    gameStartEl.volume = 0.8
-    gameStartEl.duration = "2s"
-    gameStartEl.play()
-    spinBtnEl.style.opacity = "0.3"
-    spinBtnEl.style.disabled = true
-    enterNameEl.style.visibility = "hidden"
-    submitBtnEl.style.visibility = "hidden"
-    enterNameEl.style.visibility = "visible"
-    newGameBtnEl.style.visibility = "hidden"
-    submitBtnEl.style.visibility = "visible"
-    totalCoinsEl.style.color = "white"
-    fruit1El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000")`
-    fruit2El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg")`
-    fruit3El.style.backgroundImage = `url("https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000")`
-    totalCoinsEl.innerHTML = "20"
-    totalCoins = 20
-    topTextEl.innerHTML = "Enter your name"
-    topTextEl.style.color = "white"
-    fruit1BtmEl.innerHTML = "spin"
-    fruit2BtmEl.innerHTML = "to"
-    fruit3BtmEl.innerHTML = "win!"
-    stopTimer()
 }
 
 function newProfile() {
