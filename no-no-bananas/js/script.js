@@ -185,6 +185,7 @@ function matchCondition1() {
     } else {
         totalCoins -= 1
         totalCoinsEl.innerHTML = totalCoins
+        topTextEl.style.color = "white"
     }
     spinBtnEl.removeEventListener("click", render)
     spinBtnEl.style.visibility = "hidden"
