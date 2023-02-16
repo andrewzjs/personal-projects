@@ -1,10 +1,8 @@
 # No No Bananas 
 
 ## Description
- **No No Bananas** is based on a slot machine game, but with a little twist. Matching fruits will give points, with the excpetion of the **Rotten Banana**.
- I created this game with an **8-bit art style**, because the 1st generation pokemon games were a big part of my childhood and still influence me to this day. 
+ **No No Bananas** is based on a slot machine game, but with a little twist. Matching fruits will give points, with the exception of the **Rotten Banana**, which will give -10 points. I created this game with an **8-bit art style**, because the 1st generation pokemon games were a big part of my childhood and still influence me to this day. 
 
-## Screenshots
  ![Initial Game state](/no-no-bananas/screenshots/game-screenshot.PNG?raw=true)
  ![Win Game State](/no-no-bananas/screenshots/game-win-screenshot.PNG?raw=true)
 
@@ -31,20 +29,20 @@
 
 ## Icebox 
 1. Add weighted probability, so some fruits are easier to obtain than others.
-2.  Add a spinning animation to each slot after hitting the "spin" button, to closely mimic a traditional slot machine.
+2. Add a spinning animation to each slot after hitting the "spin" button, to closely mimic a traditional slot machine.
 3. Add a legitimate "high score" section that would actually store data in a server. 
 
 ## Attributions
 
- [Avocado img](https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000)
- [Watermelon img](https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg) 
- [Strawberry img](https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000)
- [Banana img](https://ih1.redbubble.net/image.1269997801.9804/st,small,507x507-pad,600x600,f8f8f8.jpg)
- [Main-game-area background img](https://wallpapers.com/images/hd/night-sky-8-bit-190cuporbadt1g4h.jpg)
- [Top-text-area background img](https://i.pinimg.com/originals/e2/74/e1/e274e17933fea9ce7bcc67a186c781c6.gif)
- [Document background image](https://wallpapers.com/images/hd/night-sky-8-bit-190cuporbadt1g4h.jpg)
-[Slots and buttons background img](https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg)
- [Keyframe animations guide](https://www.joshwcomeau.com/animation/keyframe-animations/)
- [8 bit sound efffects](https://pixabay.com/sound-effects/search/8-bit/)
- [Background music](https://freemusicarchive.org/genre/Chiptune/)
- [Emoticons](https://fsymbols.com/emoticons/)
+ [Avocado img](https://img.freepik.com/premium-vector/avocado-pixel-characters-8-bit-fruit-vector-illustrations-game-assets-cross-stitch_614713-1170.jpg?w=2000) |
+ [Watermelon img](https://img.freepik.com/premium-vector/8-bit-pixels-watermelon-slices-fruit-pixels-game-icons-illustration-stitch-cross-vector_614713-1187.jpg) |
+ [Strawberry img](https://img.freepik.com/premium-vector/8-bit-pixel-strawberry-fruits-pixel-game-assets-cross-stitch-patterns-vector_614713-1185.jpg?w=2000) |
+ [Banana img](https://ih1.redbubble.net/image.1269997801.9804/st,small,507x507-pad,600x600,f8f8f8.jpg) |
+ [Main-game-area background img](https://wallpapers.com/images/hd/night-sky-8-bit-190cuporbadt1g4h.jpg) |
+ [Top-text-area background img](https://i.pinimg.com/originals/e2/74/e1/e274e17933fea9ce7bcc67a186c781c6.gif) |
+ [Document background image](https://wallpapers.com/images/hd/night-sky-8-bit-190cuporbadt1g4h.jpg) |
+ [Slots and buttons background img](https://images.pond5.com/retro-8-bit-arcade-game-090060814_prevstill.jpeg) |
+ [Keyframe animations guide](https://www.joshwcomeau.com/animation/keyframe-animations/) |
+ [8 bit sound efffects](https://pixabay.com/sound-effects/search/8-bit/) |
+ [Background music](https://freemusicarchive.org/genre/Chiptune/) |
+ [Emoticons](https://fsymbols.com/emoticons/) |
