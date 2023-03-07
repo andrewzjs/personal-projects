@@ -50,10 +50,9 @@ async function create(req, res) {
 
 async function deleteEntry(req,res) {
     try {
-        Pokemon.deleteOne(req.params.id)
-        res.redirect("/skills")
-    } catch {
-
+        await Pokemon.deleteOne({_id: req.params.id})
+        res.redirect("/pokemons")
+    } catch(err){
+        console.log(err)
     }
-
 }

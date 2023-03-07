@@ -1,7 +1,7 @@
 <%- include("../partials/header") %>
-<br>
+<br><br><br>
 <h1>Add a Pokemon:</h1>
-<br>
+<br><br><br>
     <form id="new-pokemon" action="/pokemons" method="POST">
       <label>Name:
         <select name="pokemonName">
@@ -11,7 +11,7 @@
         </select>
       </label>
       <label>Special Ability:
-      <input type = "string" name="specialAbility" autocomplete= "off">
+      <input type = "string" name="specialAbility">
       <label>height (cm):
         <input type = "number" name = "height" min="0" max="9999">
       </label>

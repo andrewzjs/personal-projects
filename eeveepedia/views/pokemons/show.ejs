@@ -13,10 +13,10 @@
 
 <a href ="/pokemons/<%=pokemons.id%>/pokemonTypes/new">Add a Type</a>
 
-<form action="/pokemons/<%=pokemons.id%>?_method=DELETE" method="POST" class= "delete-form">
+<form action="/pokemons/<%=pokemons._id%>?_method=DELETE" method="POST" class= "delete-form">
     <button type="submit">Delete Entry</button>
 </form>
 
-<form action="/pokemons/<%=pokemons.id%>?_method=UPDATE" method="POST" class= "update-form">
+<form action="/pokemons/<%=pokemons._id%>?_method=UPDATE" method="POST" class= "update-form">
     <button type="submit">Update Entry</button>
 </form>
