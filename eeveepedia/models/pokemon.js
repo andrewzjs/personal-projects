@@ -23,12 +23,14 @@ const pokemonsSchema = new Schema({
             "Venusaur"
         ]
     }, height: {
-        type: Number,
+        type: String,
+        default: "N/A"
     }, weight: {
-        type: Number,
+        type: String,
+        default: "N/A"
     }, dateCaught: {
-            type: Date,
-            default: Date.now()  + 365*24*60*60000,
+        type: Date,
+        default: Date.now()
     }, gender: {
         type: String,
     }, isShiny: {
@@ -37,8 +39,10 @@ const pokemonsSchema = new Schema({
     }, moves: [movesSchema],
     specialAbility: {
         type: String,
+        default: "N/A"
     }, description: {
         type: String,
+        default: "N/A"
     }, moves: [movesSchema]
 
 

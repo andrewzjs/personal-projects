@@ -46,6 +46,11 @@ h1, p {
 
 .intro-homepage {
   margin: 60px auto;
+  font-size: 25px;
+}
+
+#home-title {
+  font-size: 35px;
 }
 
 table {
@@ -81,12 +86,13 @@ form {
 }
 .home-btns {
   display: flex;
+  gap: 18px;
+  justify-content: center;
   
 }
 .btn-home {
   display: inline-block;
   padding: 1.1em;
-  margin: 0 auto;
   text-decoration: none;
   border: 2px solid skyblue;
   background-color: skyblue;

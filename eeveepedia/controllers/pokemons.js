@@ -36,8 +36,10 @@ async function show(req, res) {
 
 async function create(req, res) {
     try {
-        const pokemons = new Pokemon(req.body)
-        await pokemons.save()
+        for (let key in req.body) {
+            if (req.body[key] === '') delete req.body[key];
+          }
+        const pokemons = await Pokemon.create(req.body)
         console.log(req.body)
         res.redirect("/pokemons")
     } catch(err) {

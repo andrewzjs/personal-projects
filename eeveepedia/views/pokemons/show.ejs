@@ -3,9 +3,10 @@
 <% if (pokemons.pokemonName === "Ivysaur") { %>
     <img src = "https://www.nicepng.com/png/detail/168-1685190_ivysaur-pokemon.png">
 <% } %>
-<h2>Height(cm): <%=pokemons.height%></h2>
-<h2>Weight(kg): <%=pokemons.weight%></h2>
 <h2>Date Caught: <%=pokemons.dateCaught%></h2>
 <h2>Shiny: <%=pokemons.isShiny%></h2>
+<h2>Type: </h2>
+<h2>Height(cm): <%=pokemons.height%></h2>
+<h2>Weight(kg): <%=pokemons.weight%></h2>
 <h2>Description: <%=pokemons.description%></h2>
 <%- include("../partials/footer") %>
