@@ -15,6 +15,10 @@ const movesSchema = new Schema({
 })
 
 const pokemonsSchema = new Schema({
+    // num: {
+    //     type: Number,
+
+    // }
     pokemonName: {
         type: String,
         enum: [
@@ -44,7 +48,7 @@ const pokemonsSchema = new Schema({
         type: String,
         default: "N/A"
     }, moves: [movesSchema],
-    pokemonType: [{type: Schema.Types.ObjectId, ref: "PokemonType"}]
+    pokemonType: {type: Schema.Types.ObjectId, ref: "PokemonType"}
 
 
 

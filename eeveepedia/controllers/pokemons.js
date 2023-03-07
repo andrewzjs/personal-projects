@@ -1,4 +1,5 @@
 const Pokemon = require("../models/pokemon")
+const PokemonType = require("../models/pokemonType")
 
 module.exports = {
     index,
@@ -19,7 +20,8 @@ async function index(req, res) {
 
 async function newPokemon(req, res) {
     try {
-        res.render("pokemons/new", {title: "EeveePedia"})
+        const pokemonTypes = await PokemonType.find({})
+        res.render("pokemons/new", {title: "EeveePedia", pokemonTypes})
 
     } catch(err) {
         console.log(err)

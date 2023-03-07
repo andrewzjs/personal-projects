@@ -87,6 +87,17 @@ form {
 
 #submit-btn {
   font-size: 20px;
+  display: inline-block;
+  padding: 1.1em;
+  text-decoration: none;
+  border: 2px solid skyblue;
+  background-color: skyblue;
+  border-radius: 6px;
+  color: black;
+  text-align: center;
+}
+#submit-btn:hover {
+  background-color: #FF4747;
 }
 .home-btns {
   display: flex;
@@ -105,10 +116,26 @@ form {
   text-align: center;
 }
 
+
 .btn-home:hover {
   background-color: #FF4747;
 }
 
+button {
+    display: inline-block;
+    padding: 1.1em;
+    text-decoration: none;
+    border: 2px solid skyblue;
+    background-color: skyblue;
+    border-radius: 6px;
+    color: black;
+    text-align: center;
+  }
+
+button:hover {
+  background-color: #FF4747;
+
+}
 a {
   color: black;
 }
