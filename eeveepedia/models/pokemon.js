@@ -43,7 +43,9 @@ const pokemonsSchema = new Schema({
     }, description: {
         type: String,
         default: "N/A"
-    }, moves: [movesSchema]
+    }, moves: [movesSchema],
+    pokemonType: [{type: Schema.Types.ObjectId, ref: "PokemonType"}]
+
 
 
 }, {timestamps: true})

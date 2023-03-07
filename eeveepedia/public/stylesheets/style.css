@@ -7,7 +7,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: white;
+  background-color: #FAF9F6;
 }
 
 a {
@@ -19,6 +19,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 nav > a:hover {
@@ -28,7 +29,7 @@ nav > a:hover {
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: skyblue;
   display: flex;
   padding: 0 20px 0 30px;
 }
@@ -99,4 +100,12 @@ form {
   border-radius: 6px;
   color: black;
   text-align: center;
+}
+
+.btn-home:hover {
+  background-color: #FF4747;
+}
+
+a {
+  color: black;
 }

@@ -5,6 +5,7 @@ module.exports = {
     show,
     new: newPokemon,
     create,
+    delete: deleteEntry,
 }
 
 async function index(req, res) {
@@ -37,12 +38,22 @@ async function show(req, res) {
 async function create(req, res) {
     try {
         for (let key in req.body) {
-            if (req.body[key] === '') delete req.body[key];
-          }
+      if (req.body[key] === '') delete req.body[key];
+    }
         const pokemons = await Pokemon.create(req.body)
         console.log(req.body)
-        res.redirect("/pokemons")
+        res.redirect(`/pokemons/${pokemons._id}`)
     } catch(err) {
         console.log(err)
     }
+}
+
+async function deleteEntry(req,res) {
+    try {
+        Pokemon.deleteOne(req.params.id)
+        res.redirect("/skills")
+    } catch {
+
+    }
+
 }

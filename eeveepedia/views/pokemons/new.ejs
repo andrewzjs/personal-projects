@@ -11,13 +11,14 @@
         </select>
       </label>
       <label>Special Ability:
-      <input type = "string" name="specialAbility">
+      <input type = "string" name="specialAbility" autocomplete= "off">
       <label>height (cm):
         <input type = "number" name = "height" min="0" max="9999">
       </label>
       <label>weight (kg):
       <input type = "number" name = "weight" min="0" max="9999">
       </label>
+      <br> <br><br>
       <label>Gender:
       <select name="gender">
       <option value ="Male">Male</option>
@@ -25,16 +26,20 @@
       <option value ="Unknown">Unknown</option>
       </select>
       </label>
-      <br><br>
       <label>Shiny:
          <select name="isShiny">
             <option value ="false">No</option>
             <option value ="true">Yes</option>
          </select>
      </label>
-      <label>Description:
-        <input id="desc-box" type = "string" name = "description">
-        </label>
+
+    <label>Pokemon Type(s): 
+        <select id="select-type" name ="pokemonTypes">
+        </select>
+    </label>
+    <label>Description:
+        <input id="desc-box" type = "string" name = "description" autocomplete= "off">
+    </label>
     <br><br><br>
       <input id = "submit-btn" type = "submit" value="Add Pokemon">
     </form>
