@@ -30,7 +30,7 @@ async function newPokemon(req, res) {
 
 async function show(req, res) {
     try {
-        const pokemons = await Pokemon.findById(req.params.id)
+        const pokemons = await Pokemon.findById(req.params.id).populate("pokemonTypes")
         res.render("pokemons/show", {title: "EeveePedia", pokemons})
     } catch(err) {
         console.log(err)

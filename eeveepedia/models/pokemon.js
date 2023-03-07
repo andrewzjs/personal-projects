@@ -48,7 +48,7 @@ const pokemonsSchema = new Schema({
         type: String,
         default: "N/A"
     }, moves: [movesSchema],
-    pokemonType: {type: Schema.Types.ObjectId, ref: "PokemonType"}
+    pokemonTypes: {type: Schema.Types.ObjectId, ref: "PokemonType"}
 
 
 

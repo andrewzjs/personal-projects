@@ -5,13 +5,18 @@
 <% } %>
 <h2>Date Caught: <%=pokemons.dateCaught%></h2>
 <h2>Shiny: <%=pokemons.isShiny%></h2>
-<h2>Type: </h2>
+<h2>Type:
+    <% if (pokemons.pokemonTypes.type1 === pokemons.pokemonTypes.type2) { %>
+        <%=pokemons.pokemonTypes.type1%>
+    <% } else { %>
+        <%=pokemons.pokemonTypes.type1%> &
+        <%=pokemons.pokemonTypes.type2%>
+    <% } %>
+</h2>
 <h2>Height(cm): <%=pokemons.height%></h2>
 <h2>Weight(kg): <%=pokemons.weight%></h2>
 <h2>Description: <%=pokemons.description%></h2>
 <%- include("../partials/footer") %>
-
-<a href ="/pokemons/<%=pokemons.id%>/pokemonTypes/new">Add a Type</a>
 
 <form action="/pokemons/<%=pokemons._id%>?_method=DELETE" method="POST" class= "delete-form">
     <button type="submit">Delete Entry</button>

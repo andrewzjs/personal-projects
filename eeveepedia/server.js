@@ -10,7 +10,6 @@ require("./config/database")
 
 var indexRouter = require('./routes/index');
 var pokemonsRouter = require('./routes/pokemons');
-var pokemonTypesRouter = require("./routes/pokemonTypes")
 
 var app = express();
 
@@ -28,7 +27,6 @@ app.use(methodOverride("_method"))
 
 app.use('/', indexRouter);
 app.use('/pokemons', pokemonsRouter);
-app.use("/", pokemonTypesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
