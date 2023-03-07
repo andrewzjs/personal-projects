@@ -11,7 +11,7 @@ module.exports = {
 
 async function index(req, res) {
     try {
-        const pokemons = await Pokemon.find({})
+        const pokemons = await Pokemon.find({}).populate("pokemonTypes")
         res.render("pokemons/index", {title: "EeveePedia", pokemons})
     } catch(err) {
         console.log(err)

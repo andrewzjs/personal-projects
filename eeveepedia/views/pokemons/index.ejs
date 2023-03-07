@@ -18,11 +18,19 @@
 
             <tr>
                 <td><%= p.pokemonName %></td>
-                <td></td>
+                <td>
+                    <% if (p.pokemonTypes.type1 === p.pokemonTypes.type2) { %>
+                        <%=p.pokemonTypes.type1%>
+                    <% } else { %>
+                        <%=p.pokemonTypes.type1%> &
+                        <%=p.pokemonTypes.type2%>
+                    <% } %>
+                </td>
                 <td><%= p.specialAbility %></td>
                 <td><a href = "/pokemons/<%=p._id%>">More Info</a></td>
+                <% }) %>
             </tr>
-        <% }) %>
+
     </tbody>
 </table>
 <%- include("../partials/footer") %>
