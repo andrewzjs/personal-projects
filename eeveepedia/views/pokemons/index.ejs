@@ -1,0 +1,25 @@
+<%- include("../partials/header") %>
+<h1>EeveePedia</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Pokemon</th>
+            <th>Type</th>
+            <th>Special Ability</th>
+            <th>More Info</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% pokemons.forEach(p => { %>
+
+            <tr>
+                <td><%= p.pokemonName %></td>
+                <td> </td>
+                <td><%= p.specialAbility %></td>
+                <td><a href = "/pokemons/<%=p._id%>">More Info</a></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<%- include("../partials/footer") %>

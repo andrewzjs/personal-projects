@@ -1,0 +1,44 @@
+<%- include("../partials/header") %>
+<br>
+<h1>Add a Pokemon:</h1>
+<br>
+    <form id="new-pokemon" action="/pokemons" method="POST">
+      <label>Name:
+        <select name="pokemonName">
+          <option value="Bulbasaur">Bulbasaur</option>
+          <option value="Ivysaur">Ivysaur</option>
+          <option value="Venusaur">Venusaur</option>
+        </select>
+      </label>
+      <label>Special Ability:
+      <input type = "string" name="specialAbility">
+      <label>height (cm):
+        <input type = "number" name = "height" min="0" max="9999">
+      </label>
+      <label>weight (kg):
+      <input type = "number" name = "weight" min="0" max="9999">
+      </label>
+      <label>Gender:
+      <select name="gender">
+      <option value ="Male">Male</option>
+      <option value ="Female">Female</option>
+      <option value ="Unknown">Unknown</option>
+      </select>
+      </label>
+      <br><br>
+      <label>Date Caught:
+        <input type = "date" name = "dateCaught">
+        </label>
+      <label>Shiny:
+         <select name="isShiny">
+            <option value ="true">Yes</option>
+            <option value ="false">No</option>
+         </select>
+     </label>
+      <label>Description:
+        <input id="desc-box" type = "string" name = "description">
+        </label>
+    <br><br><br>
+      <input id = "submit-btn" type = "submit" value="Add Pokemon">
+    </form>
+<%- include("../partials/footer") %>

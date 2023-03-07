@@ -1,0 +1,96 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+* {
+  font-family: 'Raleway', sans-serif;
+}
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: white;
+}
+
+a {
+  color: white;
+  font-size: 20px;;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav > a:hover {
+  color: white;
+  background-color: #424748;
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #B8C0C2;
+  display: flex;
+  padding: 0 20px 0 30px;
+}
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+h1, p {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.intro-homepage {
+  margin: 60px auto;
+}
+
+table {
+  font-size: 25px;
+  margin: 0 auto;
+  background-color: gray;
+}
+
+table td {
+  padding: 12px;
+  text-align: center;
+  border: solid black;
+}
+
+th {
+  border: solid black;
+  background-color: white;
+}
+
+
+form {
+  text-align: center;
+  font-size: 22px;
+}
+
+#desc-box {
+ height: 50px;
+ font-size: 23px;
+}
+
+#submit-btn {
+  font-size: 20px;
+}
+.home-btns {
+  display: flex;
+  
+}
+.btn-home {
+  display: inline-block;
+  padding: 1.1em;
+  margin: 0 auto;
+  text-decoration: none;
+  border: 2px solid skyblue;
+  background-color: skyblue;
+  border-radius: 6px;
+  color: black;
+  text-align: center;
+}
