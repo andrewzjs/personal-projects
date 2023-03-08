@@ -7,6 +7,7 @@
 <table>
     <thead>
         <tr>
+            <th></th>
             <th>Pokemon</th>
             <th>Type</th>
             <th>Special Ability</th>
@@ -17,6 +18,7 @@
         <% pokemons.forEach(p => { %>
 
             <tr>
+                <td><img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=p.pokemonNum%>.png"></td>
                 <td><%= p.pokemonName %></td>
                 <td>
                     <% if (p.pokemonTypes.type1 === p.pokemonTypes.type2) { %>

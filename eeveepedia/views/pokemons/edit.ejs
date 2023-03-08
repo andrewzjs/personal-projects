@@ -5,11 +5,12 @@
 <br><br>
 <form action="/pokemons/<%=pokemons._id%>/update/?_method=PUT" method="POST" class= "update-form">
     <label>Name:
-        <select name="pokemonName">
+        <select name="pokemonName" onchange="setPokemonNum(this.options[this.selectedIndex].id)">
             <% pokemons1.forEach((p, idx) => { %>
                 <option value="<%=p.name%>"> <%=idx +1%>. <%=p.name%></option> 
             <% }) %>
         </select>
+      <input id="pokemon-num" type="hidden" name="pokemonNum" value="1">
       </label>
       <label>Special Ability:
       <input type = "string" name="specialAbility">
@@ -54,6 +55,7 @@
     <br><br><br>
         <button type="submit">Update Pokemon</button>
 </form>
+<a id="edit-btn" href ="/pokemons/<%=pokemons._id%>">Cancel</a>
 
 
 <%- include("../partials/footer") %>
