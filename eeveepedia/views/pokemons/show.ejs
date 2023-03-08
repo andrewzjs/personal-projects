@@ -1,8 +1,8 @@
 <%- include("../partials/header") %>
 <h2><%=pokemons.pokemonName%></h2>
-<% pokemons1.forEach((p, idx) => { %>
-<img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=idx+1%>.png">
-<% }) %>
+
+<img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=pokemons.pokemonNum%>.png">
+
 <h2>Date Caught: <%=pokemons.dateCaught%></h2>
 <h2>Shiny: <%=pokemons.isShiny%></h2>
 <h2>Type:

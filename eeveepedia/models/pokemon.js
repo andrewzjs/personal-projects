@@ -19,6 +19,10 @@ const pokemonsSchema = new Schema({
     //     type: Number,
 
     // }
+    pokemonNum: {
+        type: Number,
+
+    },
     pokemonName: {
         type: String,
     }, height: {

@@ -4,11 +4,12 @@
 <br><br><br>
     <form id="new-pokemon" action="/pokemons" method="POST">
       <label>Name:
-        <select name="pokemonName">
+        <select name="pokemonName" onchange="setPokemonNum(this.options[this.selectedIndex].id)">
             <% pokemons.forEach((p, idx) => { %>
-                <option value="<%=p.name%>"> <%=idx +1%>. <%=p.name%></option> 
+                <option id ="<%=idx+1%>" value="<%=p.name%>"> <%=idx +1%>. <%=p.name%></option> 
             <% }) %>
         </select>
+      <input id="pokemon-num" type="hidden" name="pokemonNum" value="1">
       </label>
       <label>Special Ability:
       <input type = "string" name="specialAbility">
