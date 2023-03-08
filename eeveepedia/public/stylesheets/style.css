@@ -143,3 +143,18 @@ a {
 select {
   font-size: 20px;
 }
+
+#edit-btn {
+  display: inline-block;
+  padding: 1.1em;
+  text-decoration: none;
+  border: 2px solid skyblue;
+  background-color: skyblue;
+  border-radius: 6px;
+  color: black;
+  text-align: center;
+}
+
+#edit-btn:hover {
+  background-color: #FF4747;
+}

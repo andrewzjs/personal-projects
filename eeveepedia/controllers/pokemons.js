@@ -7,6 +7,8 @@ module.exports = {
     new: newPokemon,
     create,
     delete: deleteEntry,
+    update,
+    edit,
 }
 
 async function index(req, res) {
@@ -56,5 +58,27 @@ async function deleteEntry(req,res) {
         res.redirect("/pokemons")
     } catch(err){
         console.log(err)
+    }
+}
+
+
+async function edit(req, res) {
+    try {
+        const pokemonTypes = await PokemonType.find({})
+        const pokemons = await Pokemon.findById(req.params.id).populate("pokemonTypes")
+        res.render("pokemons/edit", {title: "EeveePedia", pokemonTypes, pokemons})
+    } catch(err){
+        console.log(err)
+    }
+}
+
+async function update(req, res) {
+    try {
+        const pokemons = await Pokemon.findById(req.params.id).populate("pokemonTypes")
+        const updatedPokemon = await Pokemon.findByIdAndUpdate(req.params.id, req.body).populate("pokemonTypes")
+        await updatedPokemon.save()
+    } catch(err){
+        console.log(err)
+        return res.redirect(`/pokemons/${updatedPokemon._id}/edit`)
     }
 }
