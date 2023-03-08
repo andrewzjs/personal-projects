@@ -82,9 +82,10 @@ async function deleteEntry(req,res) {
 
 async function edit(req, res) {
     try {
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
         const pokemonTypes = await PokemonType.find({})
         const pokemons = await Pokemon.findById(req.params.id).populate("pokemonTypes")
-        res.render("pokemons/edit", {title: "EeveePedia", pokemonTypes, pokemons})
+        res.render("pokemons/edit", {title: "EeveePedia", pokemonTypes, pokemons, pokemons1: response.data.results})
     } catch(err){
         console.log(err)
     }

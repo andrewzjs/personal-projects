@@ -6,9 +6,9 @@
 <form action="/pokemons/<%=pokemons._id%>/update/?_method=PUT" method="POST" class= "update-form">
     <label>Name:
         <select name="pokemonName">
-          <option value="Bulbasaur">Bulbasaur</option>
-          <option value="Ivysaur">Ivysaur</option>
-          <option value="Venusaur">Venusaur</option>
+            <% pokemons1.forEach((p, idx) => { %>
+                <option value="<%=p.name%>"> <%=idx +1%>. <%=p.name%></option> 
+            <% }) %>
         </select>
       </label>
       <label>Special Ability:
