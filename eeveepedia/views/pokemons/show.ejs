@@ -1,8 +1,8 @@
 <%- include("../partials/header") %>
 <h2><%=pokemons.pokemonName%></h2>
-<% if (pokemons.pokemonName === "Ivysaur") { %>
-    <img src = "https://www.nicepng.com/png/detail/168-1685190_ivysaur-pokemon.png">
-<% } %>
+<% pokemons1.forEach((p, idx) => { %>
+<img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=idx+1%>.png">
+<% }) %>
 <h2>Date Caught: <%=pokemons.dateCaught%></h2>
 <h2>Shiny: <%=pokemons.isShiny%></h2>
 <h2>Type:

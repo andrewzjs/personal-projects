@@ -35,8 +35,9 @@ async function newPokemon(req, res) {
 
 async function show(req, res) {
     try {
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
         const pokemons = await Pokemon.findById(req.params.id).populate("pokemonTypes")
-        res.render("pokemons/show", {title: "EeveePedia", pokemons})
+        res.render("pokemons/show", {title: "EeveePedia", pokemons, pokemons1: response.data.results})
     } catch(err) {
         console.log(err)
     }
