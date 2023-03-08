@@ -5,9 +5,9 @@
     <form id="new-pokemon" action="/pokemons" method="POST">
       <label>Name:
         <select name="pokemonName">
-          <option value="Bulbasaur">Bulbasaur</option>
-          <option value="Ivysaur">Ivysaur</option>
-          <option value="Venusaur">Venusaur</option>
+            <% pokemons.forEach((p, idx) => { %>
+                <option value="<%=p.name%>"> <%=idx +1%>. <%=p.name%></option> 
+            <% }) %>
         </select>
       </label>
       <label>Special Ability:

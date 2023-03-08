@@ -3,7 +3,7 @@
 <br><br>
 <h1>Edit Pokemon</h1>
 <br><br>
-<form action="/pokemons/<%=pokemons._id%>?_method=PUT" method="POST" class= "update-form">
+<form action="/pokemons/<%=pokemons._id%>/update/?_method=PUT" method="POST" class= "update-form">
     <label>Name:
         <select name="pokemonName">
           <option value="Bulbasaur">Bulbasaur</option>
@@ -52,7 +52,7 @@
         <input id="desc-box" type = "string" name = "description" autocomplete= "off">
     </label>
     <br><br><br>
-      <input id = "edit-btn" type = "submit" value="Update Pokemon">
+        <button type="submit">Update Pokemon</button>
 </form>
 
 

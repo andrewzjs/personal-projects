@@ -21,11 +21,6 @@ const pokemonsSchema = new Schema({
     // }
     pokemonName: {
         type: String,
-        enum: [
-            "Bulbasaur",
-            "Ivysaur",
-            "Venusaur"
-        ]
     }, height: {
         type: String,
         default: "N/A"

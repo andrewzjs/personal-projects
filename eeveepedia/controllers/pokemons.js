@@ -1,5 +1,6 @@
 const Pokemon = require("../models/pokemon")
 const PokemonType = require("../models/pokemonType")
+const axios = require("axios")
 
 module.exports = {
     index,
@@ -22,8 +23,10 @@ async function index(req, res) {
 
 async function newPokemon(req, res) {
     try {
+        const response = await axios.get("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
+        console.log(Object.values(response.data)[1])
         const pokemonTypes = await PokemonType.find({})
-        res.render("pokemons/new", {title: "EeveePedia", pokemonTypes})
+        res.render("pokemons/new", {title: "EeveePedia", pokemonTypes, pokemons: response.data.results})
 
     } catch(err) {
         console.log(err)
@@ -52,6 +55,21 @@ async function create(req, res) {
     }
 }
 
+async function update(req, res) {
+    const pokemons = await Pokemon.findById(req.params.id).populate("pokemonTypes")
+    try {
+        for (let key in req.body) {
+            if (req.body[key] === '') delete req.body[key];
+    }
+    for (let key in req.body) pokemons[key] = req.body[key]
+    pokemons.save()
+        res.redirect(`/pokemons/${pokemons._id}`)
+    } catch(err){
+        console.log(err)
+        return res.redirect(`/pokemons/${pokemons._id}/edit`)
+    }
+}
+
 async function deleteEntry(req,res) {
     try {
         await Pokemon.deleteOne({_id: req.params.id})
@@ -69,16 +87,5 @@ async function edit(req, res) {
         res.render("pokemons/edit", {title: "EeveePedia", pokemonTypes, pokemons})
     } catch(err){
         console.log(err)
-    }
-}
-
-async function update(req, res) {
-    try {
-        const pokemons = await Pokemon.findById(req.params.id).populate("pokemonTypes")
-        const updatedPokemon = await Pokemon.findByIdAndUpdate(req.params.id, req.body).populate("pokemonTypes")
-        await updatedPokemon.save()
-    } catch(err){
-        console.log(err)
-        return res.redirect(`/pokemons/${updatedPokemon._id}/edit`)
     }
 }
