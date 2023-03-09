@@ -3,24 +3,25 @@
 <h1>All Pokemon</h1>
 <br><br>
 
-
+<div class = "container">
+    <div class = "entries-container">
 <table>
     <thead>
         <tr>
-            <th></th>
-            <th>Pokemon</th>
-            <th>Type</th>
-            <th>Special Ability</th>
-            <th>More Info</th>
+            <th class="first-el">Sprite</th>
+            <th class="second-el">Pokemon</th>
+            <th class="third-el">Type</th>
+            <th class="fourth-el">Ability</th>
+            <th class="fifth-el">Details</th>
         </tr>
     </thead>
     <tbody>
         <% pokemons.forEach(p => { %>
 
-            <tr>
-                <td><img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=p.pokemonNum%>.png"></td>
-                <td><%= p.pokemonName %></td>
-                <td>
+            <tr id="hover-tr">
+                <td class="first-el"><img class ="index-sprites" src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=p.pokemonNum%>.png"></td>
+                <td class="second-el"><%= p.pokemonName %></td>
+                <td class="third-el">
                     <% if (p.pokemonTypes.type1 === p.pokemonTypes.type2) { %>
                         <%=p.pokemonTypes.type1%>
                     <% } else { %>
@@ -28,11 +29,13 @@
                         <%=p.pokemonTypes.type2%>
                     <% } %>
                 </td>
-                <td><%= p.specialAbility %></td>
-                <td><a href = "/pokemons/<%=p._id%>">More Info</a></td>
+                <td class="fourth-el"><%= p.specialAbility %></td>
+                <td class="fifth-el"><a class ="more-info" href = "/pokemons/<%=p._id%>">More Info</a></td>
                 <% }) %>
             </tr>
 
     </tbody>
 </table>
+</div>
+</div>
 <%- include("../partials/footer") %>

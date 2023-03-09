@@ -1,6 +1,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 
+@keyframes updown {
+  0% {
+    transform: translateY(-4%);
+  }
+  50% {
+    transform: translateY(4%);
+  }
+  100% {
+    transform: translateY(-4%);
+  } 
+}
+
 * {
   font-family: 'Raleway', sans-serif;
 }
@@ -54,24 +66,19 @@ h1, p {
 }
 
 #home-title {
-  font-size: 35px;
+  font-size: 45px;
 }
 
 table {
   font-size: 25px;
   margin: 0 auto;
-  background-color: gray;
+
 }
 
 table td {
   padding: 12px;
   text-align: center;
-  border: solid black;
-}
 
-th {
-  border: solid black;
-  background-color: white;
 }
 
 
@@ -118,7 +125,8 @@ form {
 
 
 .btn-home:hover {
-  background-color: #FF4747;
+  background-color: lightgreen;
+  border: 2px solid lightgreen;
 }
 
 button {
@@ -133,7 +141,8 @@ button {
   }
 
 button:hover {
-  background-color: #FF4747;
+  background-color: lightgreen;
+  border: 2px solid lightgreen;
 
 }
 a {
@@ -156,5 +165,116 @@ select {
 }
 
 #edit-btn:hover {
-  background-color: #FF4747;
+  background-color: lightgreen;
+  border: 2px solid lightgreen;
+}
+
+#pokemon-select {
+  width: 180px;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 80vh;
+
+  
+}
+
+.entries-container {
+  grid-column: 2 /span 3;
+  background-color: #94ECBE;
+}
+
+.icon {
+  height: 40px;
+  
+  
+}
+
+
+.show-sprites {
+  animation: updown 2.2s infinite;
+  height: 400px;
+}
+#icon-landing {
+  height: 120px;
+  border-radius: 60px;
+}
+
+#landing-icon-parent {
+  display: flex;
+  justify-content: center;
+}
+
+.first-el {
+  padding: 0%;
+}
+.second-el {
+  width: 130px;
+}
+.fourth-el {
+  padding: 0 10px;
+}
+th {
+  border-bottom: solid black;
+}
+
+.more-info {
+  font-size: 18px;
+  display: inline-block;
+  padding: .2em;
+  text-decoration: none;
+  border: 2px solid  skyblue;
+  border-radius: 20px;
+  background-color:  skyblue;
+  color: black;
+  text-align: center;
+}
+
+.more-info:hover {
+  background-color: lightgreen;
+  border: 1.9px solid lightgreen;
+}
+
+#hover-tr:hover {
+  animation: updown 3s infinite;
+}
+
+#btn-delete:hover {
+  background-color: red;
+  border: 2px solid red;
+}
+
+.show-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1fr 1fr 1fr;
+}
+
+.show-name{
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 1;
+  font-size: 30px;
+  text-align: center;
+}
+.show-sprites{
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1;
+}
+.show-date-caught{
+  font-size: 20px;
+  grid-column: 3 / span 3;
+  grid-row: 1 / span 1;
+  padding-top: 10px;
+}
+.show-shiny{
+  grid-column: 4 / span 1;
+  grid-row: 2 / span 1;
+}
+.show-type{
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
 }

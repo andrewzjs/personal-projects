@@ -1,11 +1,12 @@
 <%- include("../partials/header") %>
-<h2><%=pokemons.pokemonName%></h2>
+<div class="show-container">
+<h2 class="show-name"><%=pokemons.pokemonName%></h2>
 
-<img src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=pokemons.pokemonNum%>.png">
+<img class="show-sprites" src ="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/<%=pokemons.pokemonNum%>.png">
 
-<h2>Date Caught: <%=pokemons.dateCaught%></h2>
-<h2>Shiny: <%=pokemons.isShiny%></h2>
-<h2>Type:
+<h2 class="show-date-caught">Date Caught: <%=pokemons.dateCaught%></h2>
+<h2 class="show-shiny">Shiny: <%=pokemons.isShiny%></h2>
+<h2 class="show-type">Type:
     <% if (pokemons.pokemonTypes.type1 === pokemons.pokemonTypes.type2) { %>
         <%=pokemons.pokemonTypes.type1%>
     <% } else { %>
@@ -19,7 +20,8 @@
 <%- include("../partials/footer") %>
 
 <form action="/pokemons/<%=pokemons._id%>?_method=DELETE" method="POST" class= "delete-form">
-    <button type="submit">Delete Entry</button>
+    <button id="btn-delete" type="submit">Delete Entry</button>
 </form>
 <br>
 <a id="edit-btn" href ="/pokemons/<%=pokemons._id%>/edit">Edit Entry</a>
+</div>

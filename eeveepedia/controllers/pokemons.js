@@ -2,6 +2,7 @@ const Pokemon = require("../models/pokemon")
 const PokemonType = require("../models/pokemonType")
 const axios = require("axios")
 
+
 module.exports = {
     index,
     show,
@@ -44,7 +45,12 @@ async function show(req, res) {
 }
 
 async function create(req, res) {
+    // https://git.generalassemb.ly/andrewzjs/sei-59/blob/main/w05/d2/mongoose-referencing/instructor/mongoose-movies/controllers/performers.js
+    // from sei-59/w05/d2 lesson: (to fix display date)
+    // const d = req.body.dateCaught;
+    // req.body.dateCaught = `${d.substr(5, 2)}-${d.substr(8, 2)}-${d.substr(0, 4)}`;
     try {
+
         for (let key in req.body) {
       if (req.body[key] === '') delete req.body[key];
     }
@@ -63,7 +69,7 @@ async function update(req, res) {
             if (req.body[key] === '') delete req.body[key];
     }
     for (let key in req.body) pokemons[key] = req.body[key]
-    pokemons.save()
+        pokemons.save()
         res.redirect(`/pokemons/${pokemons._id}`)
     } catch(err){
         console.log(err)

@@ -4,7 +4,7 @@
 <br><br><br>
     <form id="new-pokemon" action="/pokemons" method="POST">
       <label>Name:
-        <select name="pokemonName" onchange="setPokemonNum(this.options[this.selectedIndex].id)">
+        <select id="pokemon-select" name="pokemonName" onchange="setPokemonNum(this.options[this.selectedIndex].id)">
             <% pokemons.forEach((p, idx) => { %>
                 <option id ="<%=idx+1%>" value="<%=p.name%>"> <%=idx +1%>. <%=p.name%></option> 
             <% }) %>
@@ -16,20 +16,21 @@
       <label>Date Caught:
         <input type = "date" name = "dateCaught">
       </label>
+      <br><br><br>
+      <label>Gender:
+        <select name="gender">
+        <option value ="Male">Male</option>
+        <option value ="Female">Female</option>
+        <option value ="Unknown">Unknown</option>
+        </select>
+        </label>
       <label>height (cm):
         <input type = "number" name = "height" min="0" max="9999">
       </label>
-      <label>weight (kg):
+      <label>weight (lbs):
       <input type = "number" name = "weight" min="0" max="9999">
       </label>
-      <br> <br><br>
-      <label>Gender:
-      <select name="gender">
-      <option value ="Male">Male</option>
-      <option value ="Female">Female</option>
-      <option value ="Unknown">Unknown</option>
-      </select>
-      </label>
+      <br><br><br>
       <label>Shiny:
          <select name="isShiny">
             <option value ="false">No</option>
