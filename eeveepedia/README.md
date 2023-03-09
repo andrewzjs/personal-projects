@@ -8,9 +8,16 @@ EeveePedia is a website where users can create their own Pokedex entries. Unlike
  ![Index Page](/eeveepedia/screenshots/indexpage.PNG?raw=true)
  ![Show Page](/eeveepedia/screenshots/showpage.PNG?raw=true)
 
-## Technologies Used: JavaScript, Expres.js, Node.js, pokeAPI, Axios, CSS, EJS.
+## Technologies Used
+1. JavaScript
+2. Express.js
+3. Node.js
+4. pokeAPI
+5. Axios
+6. CSS
+7. EJS
 
-## Getting Started: 
+## Getting Started
 
 
 
