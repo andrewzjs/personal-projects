@@ -17,10 +17,10 @@
       <label>Date Caught:
         <input type = "date" name = "dateCaught">
       </label>
-      <label>height (cm):
+      <label>height (m):
         <input type = "number" name = "height" min="0" max="9999">
       </label>
-      <label>weight (kg):
+      <label>weight (lbs):
       <input type = "number" name = "weight" min="0" max="9999">
       </label>
       <br> <br><br>
@@ -55,7 +55,7 @@
     <br><br><br>
     <input id = "submit-btn" type = "submit" value="Update Entry">
 </form>
-<a id="edit-btn" href ="/pokemons/<%=pokemons._id%>">Cancel</a>
+<a id="cancel-btn" href ="/pokemons/<%=pokemons._id%>">Cancel</a>
 
 
 <%- include("../partials/footer") %>

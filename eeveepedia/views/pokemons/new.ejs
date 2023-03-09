@@ -24,7 +24,7 @@
         <option value ="Unknown">Unknown</option>
         </select>
         </label>
-      <label>height (cm):
+      <label>height (m):
         <input type = "number" name = "height" min="0" max="9999">
       </label>
       <label>weight (lbs):
@@ -55,5 +55,5 @@
     <br><br><br>
       <input id = "submit-btn" type = "submit" value="Add Pokemon">
     </form>
-    <a id="edit-btn" href ="/pokemons/<%=pokemons._id%>">Cancel</a>
+    <a id="cancel-btn" href ="/pokemons/<%=pokemons._id%>">Cancel</a>
 <%- include("../partials/footer") %>
